@@ -16,22 +16,6 @@ Rails.application.routes.draw do
   get '/course_students/:id/destroy' => 'course_students#destroy'
   #------------------------------
 
-  # Routes for the Enrollment resource:
-  # CREATE
-  get '/new_enrollment' => 'enrollments#new'
-  get '/create_enrollment' => 'enrollments#create'
-
-  # READ
-  get '/enrollments' => 'enrollments#index'
-  get '/enrollments/:id' => 'enrollments#show'
-
-  # UPDATE
-  get '/enrollments/:id/edit' => 'enrollments#edit'
-  get '/enrollments/:id/update' => 'enrollments#update'
-
-  # DELETE
-  get '/enrollments/:id/destroy' => 'enrollments#destroy'
-  #------------------------------
 
   # Routes for the Student resource:
   # CREATE
@@ -66,6 +50,9 @@ Rails.application.routes.draw do
   # DELETE
   get '/courses/:id/destroy' => 'courses#destroy'
   #------------------------------
+
+  get '/new_enrollment_for_course/:id' => 'course_students#newstudent'
+  get '/new_enrollment_for_student/:id' => 'course_students#newcourse'
 
   root :to => 'courses#index'
 end

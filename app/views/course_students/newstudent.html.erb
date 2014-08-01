@@ -1,15 +1,7 @@
-<h1>New Enrollment</h1>
+<h1>New Student for <%= @course.name%></h1>
 
 <form action="/create_course_student">
- <div>
-    <label for="course_id">Course</label><br />
-    <select name="course_id">
-      <% @courses.each do |course| %>
-      <option value="<%= course.id %>"><%= course.name %></option>
-      <% end %>
-    </select>
-
-  </div>
+  <input type="hidden" name="course_id" value="<%= @course.id %>">
   <div>
     <div>
     <label for="student_id">Student</label><br />
@@ -24,4 +16,3 @@
     <input type="submit">
   </div>
 </form>
-

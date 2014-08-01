@@ -12,6 +12,16 @@ class CourseStudentsController < ApplicationController
     @courses = Course.all
     @students = Student.all
   end
+  
+  def newstudent
+    @students = Student.all
+    @course = Course.find_by(id: params[:id])
+  end
+  
+  def newcourse
+    @courses = Course.all
+    @student = Student.find_by(id: params[:id])
+  end
 
   def create
     @course_student = CourseStudent.new
